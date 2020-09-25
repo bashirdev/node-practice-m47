@@ -1,0 +1,46 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>this is my node and mongobd site</h1>
+    <p id='userName'></p>
+
+    <div class="container">
+        <div class="row">
+            <input type="text" id='user'/>
+            <button id='addUser'>get data</button>
+        </div>
+    </div>
+    <script>
+          fetch('http://localhost:3000/users/3')
+          .then(res=> res.json())
+          .then(data=> {
+              document.getElementById('userName').innerText=data.name;
+             });
+             //post data to the server
+               const btn=document.getElementById('addUser');
+              btn.addEventListener('click', ()=>{
+                  const name=document.getElementById('user').value;
+                 const user={name};
+                 //post
+                 fetch('http://localhost:3000/addUser', {
+                     method: 'POST',
+                     body:JSON.stringify(user),
+                     headers:{
+                         "Content-type":"application/json; charset=UTF-8"
+                     }
+                 })
+                 .then(res=>res.json())
+                 .then(data=> updateUser(data))
+          })
+
+          function updateUser(user){
+            document.getElementById('userName').innerText=user.name;
+          }
+    </script>
+</body>
+</html> -->
